@@ -30,6 +30,10 @@
     .hero-copy { font-size:17px; line-height:1.9; color:var(--muted); margin-bottom:28px; }
     .cta { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:54px; padding:14px 23px; background:var(--wine); color:#fff; border-radius:7px; font-size:16px; font-weight:650; line-height:1.4; text-decoration:none; border:1px solid var(--wine); }
     .cta:hover { background:#7e4b49; }
+    .cta-secondary { background:transparent; color:var(--wine); }
+    .cta-secondary:hover { background:#f1e7db; }
+    .cta-group { display:flex; flex-wrap:wrap; gap:12px; align-items:stretch; }
+    .panel-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:22px; }
     a:focus-visible { outline:3px solid #887b56; outline-offset:4px; }
     .hero-note { color:var(--muted); font-size:13px; margin:18px 0 0; }
     .letter-art { padding:22px 14px 28px; display:grid; place-items:center; min-width:0; }
@@ -71,6 +75,7 @@
       h1 { font-size:clamp(32px,8.5vw,42px); line-height:1.38; letter-spacing:-.055em; margin:23px 0 23px; }
       .hero-copy { font-size:16px; line-height:1.85; }
       .cta { width:100%; min-height:54px; }
+      .cta-group,.panel-actions { flex-direction:column; }
       .letter-art { padding:7px 20px 17px; }
       .letter { max-width:340px; padding:47px 32px 38px; }
       .letter h3 { font-size:21px; }
@@ -91,7 +96,7 @@
 <body>
   <header class="site-header"><nav class="wrap nav" aria-label="주 메뉴">
     <a href="#top" class="brand">모르는 사이 <span class="mail" aria-hidden="true">✉</span></a>
-    <div class="navlinks"><a href="#about">소개</a><a href="#how">이용 방법</a><a href="#write">편지 안내</a></div>
+    <div class="navlinks"><a href="#about">소개</a><a href="#how">이용 방법</a><a href="#write">편지함</a></div>
   </nav></header>
   <main id="top">
     <div class="wrap hero">
@@ -99,7 +104,7 @@
         <div class="eyebrow">LETTERS BETWEEN STRANGERS</div>
         <h1>이름은 몰라도,<br>마음은 닿을 수 있으니까.</h1>
         <p class="hero-copy">누구에게도 하지 못한 이야기가 있나요?<br>서툰 당신의 마음을 전해주세요.<br>한 사람이 직접 읽고, 천천히 답장할게요.</p>
-        <a class="cta" href="#write">편지함 안내 보기 <span aria-hidden="true">↗</span></a>
+        <div class="cta-group"><a class="cta" href="https://script.google.com/macros/s/AKfycbw_OklTfYLJypT_oh-vGW5vaOnckwY6NVQjlMjsi84B35hOjodK7bak3Nb7wC9xNAoI/exec" target="_blank" rel="noopener noreferrer">편지 쓰러 가기 <span aria-hidden="true">↗</span></a><a class="cta cta-secondary" href="https://script.google.com/macros/s/AKfycbw_OklTfYLJypT_oh-vGW5vaOnckwY6NVQjlMjsi84B35hOjodK7bak3Nb7wC9xNAoI/exec" target="_blank" rel="noopener noreferrer">나의 답장 확인하기 <span aria-hidden="true">↗</span></a></div>
         <p class="hero-note">실명 없이, 나만의 별명으로 마음을 전하는 공간</p>
       </div>
       <div class="letter-art" aria-hidden="true"><div class="letter"><span class="stamp">✉</span><h3>낯선 당신에게,</h3><p>오늘은 어떤 하루를 보내셨나요?<br>무슨 이야기든 괜찮아요.<br>이곳에 잠시 마음을 내려놓아 주세요.</p><span class="seal">m</span></div></div>
@@ -113,25 +118,10 @@
       <article class="step"><span class="num">02</span><h3>조용히 도착하는 편지</h3><p>편지는 비공개로 접수되며, 운영자 한 명이 직접 읽어요.</p></article>
       <article class="step"><span class="num">03</span><h3>사람이 쓰는 답장</h3><p>정해진 답변이나 AI 답장이 아닌, 한 사람이 시간을 들여 답장을 작성해요.</p></article>
     </div></div></section>
-    <section class="send" id="write"><div class="wrap"><div class="eyebrow">WRITE A LETTER</div><h2 class="section-heading">우체통 앞에서</h2><p>당신의 이야기를 기다리고 있어요.</p>
-      <div class="panel">
-        <div id="prelaunch" class="status"><strong>우체통을 준비하고 있어요.</strong><p>지금은 테스트 운영 중입니다. 편지 접수와 비밀코드를 통한 답장 확인이 모두 준비되면 이곳에서 편지를 보낼 수 있어요.</p><p style="margin-top:10px">실명, 전화번호, 주소 등 개인정보는 편지에 적지 말아 주세요.</p></div>
-        <div id="live" class="hidden"><p class="small">테스트용 접수 화면입니다. 이 양식으로 보낸 편지는 비밀코드가 발급되지 않아 답장을 확인할 수 없어요.</p><iframe id="formFrame" class="embed" title="테스트용 익명 편지 작성" loading="lazy"></iframe></div>
-      </div>
+    <section class="send" id="write"><div class="wrap"><div class="eyebrow">YOUR LITTLE LETTERBOX</div><h2 class="section-heading">당신의 편지함</h2><p>마음을 보내고, 답장을 기다리는 작은 공간이에요.</p>
+      <div class="panel"><p>편지는 실명 없이 별명으로 남길 수 있어요. 편지 제출 후 발급되는 비밀코드를 잘 보관해 주세요.</p><div class="panel-actions"><a class="cta" href="https://script.google.com/macros/s/AKfycbw_OklTfYLJypT_oh-vGW5vaOnckwY6NVQjlMjsi84B35hOjodK7bak3Nb7wC9xNAoI/exec" target="_blank" rel="noopener noreferrer">편지 쓰러 가기 <span aria-hidden="true">↗</span></a><a class="cta cta-secondary" href="https://script.google.com/macros/s/AKfycbw_OklTfYLJypT_oh-vGW5vaOnckwY6NVQjlMjsi84B35hOjodK7bak3Nb7wC9xNAoI/exec" target="_blank" rel="noopener noreferrer">나의 답장 확인하기 <span aria-hidden="true">↗</span></a></div><p class="small" style="margin-top:20px">두 버튼은 현재 같은 편지함으로 연결돼요. 편지 쓰기 또는 답장 확인 메뉴를 선택해 주세요.</p><p class="small">실명, 연락처, 주소 등 개인정보는 편지에 적지 말아 주세요.</p></div>
     </div></section>
   </main>
   <footer class="wrap">© 2026 모르는 사이 · Letters Between Strangers<br>당신의 편지를 소중히 다루겠습니다.</footer>
-  <script src="config.js"></script>
-  <script>
-    (function () {
-      const cfg = window.SITE_CONFIG || {};
-      const url = cfg.googleFormEmbedUrl || '';
-      if (cfg.acceptLetters === true && /^https:\/\/docs\.google\.com\/forms\//.test(url)) {
-        document.getElementById('prelaunch').classList.add('hidden');
-        document.getElementById('live').classList.remove('hidden');
-        document.getElementById('formFrame').src = url;
-      }
-    })();
-  </script>
 </body>
 </html>
